@@ -1,51 +1,44 @@
 # React Router
 
-This project starts out as a react-router-dom 5 app and will then be converted into v6.
+This project starts out as a react-router-dom 5 app and is converted into v6.
 
 ## Set Up
 
-In the project directory, you can run:
+Make sure you have installed the correct version(s) of react-router-dom.
 
 ### `Switch & Exact Matches`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Upgrade all `<Switch>` cases to `<Routes>` and no need to explicitly call 'exact' paths, as this is the default now.  
 
 ### `Links & NavLinks`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The `<Link>` renders an accessible `<a>` element with a real `href` that poionts to the resource it is linking to. This means that right-clicking a '<Link>` works as you would expect.
+
+A `<NavLink>` is a special kind of `<Link>` that knows whether or not it is "active". This is useful when building navigation menus and tabs. It also provides useful context for assistive technology.
+
+By default, an `active` class is added to a `<NavLink>` component when it is active. In version 6, `activeClassName` and `activeStyle` have been removed. Instead you pass a function to either `style` or `className`.
 
 ### `Fetching Data`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
+Create a custom fetch data hook to grab articles from the db.json file. Using json-server package, running and serving the db file. This becomes the api endpoint: `http://localhost:3000/articles`
 
 ### `Route Parameters`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Adding a 'read more' link to the articles and routing that link to a details page for the article. These routes will look like this: `/articles/:id` where the :id part is a changeable route parameter.
 
 ### `The useParams Hook`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The `useParams` hook returns an object of key/value pairs of the dynamic params from the current URL that were matched by the path. Child routes inherit all params from their parent.
 
 ### `Programmatic Redirects`
 
-This section has moved here:
+Replace `useHistory` with `useNavigate` for version 6 and change `history.push` and `history.replace` callsite. For details, please read [**Upgrading from v5**](https://reactrouter.com/docs/en/v6/upgrading/v5)
 
 ### `Redirect Component`
 
-This section has moved here: 
+The `<Redirect>` element is no longer supported as part of the route config inside `<Routes>` for v6. You can do a redirect inside a `useEffect`. Instead, a wildcard character and element seem to do the trick.
 
 ### `Query Parameters`
 
-This section has moved here: 
+We are going to use the `useLocation` hook to get the query string from the path in the browser.
 
