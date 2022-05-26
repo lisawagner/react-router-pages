@@ -1,10 +1,10 @@
 # React Router
 
-This project starts out as a react-router-dom 5 app and is converted into v6.
+Using react-router-dom v6
 
 ## Set Up
 
-Make sure you have installed the correct version(s) of react-router-dom.
+Verify you have installed the correct version of react-router-dom.
 
 ### `Switch & Exact Matches`
 
@@ -12,7 +12,7 @@ Upgrade all `<Switch>` cases to `<Routes>` and no need to explicitly call 'exact
 
 ### `Links & NavLinks`
 
-The `<Link>` renders an accessible `<a>` element with a real `href` that poionts to the resource it is linking to. This means that right-clicking a '<Link>` works as you would expect.
+The `<Link>` renders an accessible `<a>` element with a real `href` that points to the resource it is linking to. This means that right-clicking a `<Link>` works as you would expect.
 
 A `<NavLink>` is a special kind of `<Link>` that knows whether or not it is "active". This is useful when building navigation menus and tabs. It also provides useful context for assistive technology.
 
@@ -20,11 +20,11 @@ By default, an `active` class is added to a `<NavLink>` component when it is act
 
 ### `Fetching Data`
 
-Create a custom fetch data hook to grab articles from the db.json file. Using json-server package, running and serving the db file. This becomes the api endpoint: `http://localhost:3000/articles`
+Created a custom fetch data hook to grab articles from the db.json file. Using json-server package, running and serving the db file. This becomes the api endpoint: `http://localhost:3000/articles`
 
 ### `Route Parameters`
 
-Adding a 'read more' link to the articles and routing that link to a details page for the article. These routes will look like this: `/articles/:id` where the :id part is a changeable route parameter.
+Added a 'read more' link to the articles and routing that link to a details page for the article. These routes will look like: `/articles/:id` where the :id part is a changeable route parameter.
 
 ### `The useParams Hook`
 
@@ -40,5 +40,5 @@ The `<Redirect>` element is no longer supported as part of the route config insi
 
 ### `Query Parameters`
 
-We are going to use the `useLocation` hook to get the query string from the path in the browser.
+The `useLocation` hook is being used to get a query string from the path in the browser.
 
