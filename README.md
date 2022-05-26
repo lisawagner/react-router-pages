@@ -1,6 +1,6 @@
 # React Router
 
-Using react-router-dom v6
+Using react-router-dom v6, upgrading from 5
 
 ## Set Up
 
